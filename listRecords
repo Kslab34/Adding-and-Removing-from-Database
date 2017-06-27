@@ -1,0 +1,18 @@
+<?php
+echo "<hr><br><h2>List of all records selected</h2><hr>";
+$query = "DESCRIBE Authors;";
+
+include 'queryResult.php';
+while ($row = mysqli_fetch_array($return)) {
+    echo "<b>".$row[0]." | </b>";
+}
+echo "<br>";
+
+$query = "SELECT * FROM Authors;";
+
+include 'queryResult.php';
+
+while ($row = mysqli_fetch_array($return)) {
+    echo "".$row[0]."<b> | </b>".$row[1]."<b> | </b>".$row[2]."<b> | </b>".$row[3]."<b> | </b>".$row[4]."<b> | </b>".$row[5]."<b> | </b>".$row[6]."<b> | </b>".$row[7]."<br><br>";
+}
+?>
