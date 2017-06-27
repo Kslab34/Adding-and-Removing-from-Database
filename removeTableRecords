@@ -1,0 +1,22 @@
+<?php
+echo "<hr><br><h2>Now removing</h2><hr>";
+for ($i = 0; $i < sizeof($newAuth); $i+=2) {
+    $query = "UPDATE Authors SET `Active`='N' "
+            . "WHERE `FirstName`='" . $newAuth[$i][0] . "'";
+    
+	include 'queryResult.php';
+
+    echo $newAuth[$i][0]." ". $newAuth[$i][1]." was removed<br>";
+}
+echo "<hr><br><h2>This is who is left</h2><hr>";
+$query = "SELECT * FROM Authors where Active = 'Y'";
+
+include 'queryResult.php';
+
+while ($row = mysqli_fetch_array($return)) {
+    echo "<p><b><em>Name: </b></em>" . $row['FirstName'] . " " . $row['LastName'] . ", <b><em>First Publication: </b></em>" . $row['FirstPub'] . ", <b><em>Published: </b></em>" . $row['Year'] . ",<br><b><em>   Bio: </b></em>" . $row['Bio'] 
+            . "<br><b><em>   Birth Year: </b></em>".substr($row['birth'],0,4)." <b><em>Gender: </b></em>".$row['gender']." <b><em>Active: </b></em>".$row['Active']."</p>";
+}
+
+//$date = new DateTime($row['value']);
+?>
