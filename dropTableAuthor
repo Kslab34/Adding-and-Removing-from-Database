@@ -1,0 +1,9 @@
+<?php
+//$use_schema = "USE Library;";
+$tbl = "Authors";
+$query = "DROP TABLE $tbl;";
+
+include 'queryResult.php';
+	
+echo "successfully dropped table $tbl<br>";
+?>
