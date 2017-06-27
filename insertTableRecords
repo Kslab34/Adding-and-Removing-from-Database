@@ -1,0 +1,34 @@
+<?php
+$newAuth = array(
+    array("William", "Shakespeare", "Henry VI", "1594", "English poet, playwright, and actor, widely regarded as the greatest writer in the English language.", "1564-04-26", "M"),
+    array("Dante", "Alighieri", "Inferno (Part 1 of Divine Comedy)", "1314", "A major Italian poet of the late Middle Ages. In Italy, Dante is often referred to as il Sommo Poeta - (''the Supreme Poet'').", "1265-06-01", "M"),
+    array("Homer", "--", "Iliad and Odyssey", "c.750BC", "best known as the author of the Iliad and the Odyssey. He was believed by the ancient Greeks to have been the first and greatest of the epic poets.", "-800-01-01", "M"),
+    array("Leo", "Tolstoy", "Childhood, Boyhood, and Youth", "c.1852", "Russian writer who is regarded as one of the greatest authors of all time. Best known for the novels War and Peace (1869) and Anna Karenina (1877)", "1828-09-09", "M"),
+    array("Geoffrey", "Chaucer", "The Book of the Duchess", "c.1371", "Known as the Father of English literature, is widely considered the greatest English poet of the Middle Ages and was the first poet to be buried in Poets Corner of Westminster Abbey.", "1343-01-01", "M"),
+    array("Charles", "Dickens", "A Dinner at Poplar Walk", "1833", "English writer and social critic. He created some of the world''s best known fictional characters and is regarded as the greatest novelist of the Victorian era.", "1812-02-07", "M"),
+    array("James", "Joyce", "Dubliners", "1914", "Irish novelist and poet. He contributed to the modernist avant-garde, and is regarded as one of the most influential and important authors of the twentieth century.", "1882-02-02", "M"),
+    array("John", "Milton", "L''Allegro", "1631", " English poet, polemicist, man of letters, and a civil servant for the Commonwealth of England under Oliver Cromwell. He wrote at a time of religious flux and political upheaval, and is best known for his epic poem Paradise Lost (1667).", "1608-12-09", "M"),
+    array("Virgil", "--", "The Eclogues ", "c.42BC", "An ancient Roman poet of the Augustan period. He is known for three major works of Latin literature, the Eclogues (or Bucolics), the Georgics, and the epic Aeneid.", "-042-01-01", "M"),
+    array("Johann", "Wolfgang von Goethe", "The Sorrows of Young Werther", "1774", "German writer and statesman. His body of work includes epic and lyric poetry written in a variety of metres and styles, prose and verse dramas, memoirs, an autobiography, literary and aesthetic criticism, treatises on botany, anatomy, and colour, and four novels.", "1749-08-28", "M"),
+	array("Agatha", "Christie", "The Mysterious Affair at Styles", "1920", "The Guinness Book of World Records lists Christie as the best-selling novelist of all time. Best known for the 66 detective novels and 14 short story collections that she wrote under her own name.", "1890-09-15", "F"),
+	array("Louisa May", "Alcott", "Hospital Sketches", "1863", "American novelist and poet best known as the author of the novel Little Women and its sequels Little Men and Jo''s Boys.", "1832-11-29", "F"),
+	array("Jane", "Austen", "Sense and Sensibility", "1811", "English novelist known principally for her five major novels.", "1775-12-16", "F"),
+	array("Virginia", "Woolf", "Haworth", "1904", "English writer and one of the foremost modernists of the twentieth century.", "1882-01-25", "F"),
+	array("Joanne (J.K.)", "Rowling", "Philosopher''s Stone", "1997", "British novelist, screenwriter and film producer best known as the author of the Harry Potter fantasy series.", "1965-07-31", "F"),
+	array("Emily", "Dickinson", "Nobody knows this little rose", "1858", "While Dickinson was a prolific private poet, fewer than a dozen of her nearly 1,800 poems were published during her lifetime.", "1830-12-10", "F"),
+	array("Charlotte", "Brontë", "Jane Eyre", "1847", "English novelist and poet, first published her works under the pen name Currer Bell.", "1816-04-21", "F"),
+	array("Danielle", "Steel", "Going Home", "1973", "American novelist, currently the best selling author alive and the fourth bestselling author of all time, with over 800 million copies sold.", "1947-08-14", "F"),
+);
+//print_r($newAuth);
+echo "<hr><br><h2>Records inserted</h2><hr>";
+foreach ($newAuth as $insertArray) {
+
+    $query = "INSERT INTO Authors (`FirstName`, `LastName`, `FirstPub`, `Year`, `Bio`, `birth`, `gender`, "
+            . "`Active`) VALUES ('$insertArray[0]', '$insertArray[1]', '$insertArray[2]',"
+            . " '$insertArray[3]', '$insertArray[4]', '$insertArray[5]', '$insertArray[6]', 'Y');";
+    include 'queryResult.php';
+
+    echo "$insertArray[0] $insertArray[1] was added<br>";
+    
+}
+?>
