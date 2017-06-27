@@ -1,0 +1,18 @@
+<?php
+//$use_schema = "USE Library;";
+$tbl = "Authors";
+$query = "CREATE TABLE $tbl ("
+."FirstName VARCHAR(15),"
+."LastName VARCHAR(25),"
+."FirstPub VARCHAR(35),"
+."Year VARCHAR(10),"
+."Bio VARCHAR(400),"
+."birth VARCHAR(10),"
+."gender VARCHAR(1),"
+."Active VARCHAR(1)"
+.") ;";
+
+include 'queryResult.php';
+
+echo "successfully created table $tbl<br>";
+?>
